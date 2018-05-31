@@ -1,4 +1,4 @@
-class ClickbaitValidator < ActiveRecord::EachValidator
+class ClickbaitValidator < ActiveModel::EachValidator
   clickbait_regex = /\b(Won't Believe|Guess|Secret|Top \d*)\b/
 
   def validate_each(record, attribute, value)
