@@ -4,7 +4,7 @@ class ClickbaitValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     if value.nil?
       record.errors.add(attribute, 'name cannot be blank')
-    elsif value.match(/\b(Won't Believe|Guess|Secret|Top \d*)\b/).blank?
+    elsif value.match(/\b(Won't Believe|Guess|Secret|Top \d*)\b/i).blank?
       record.errors.add(attribute, 'not clickbait-y enough')
     end
   end
